@@ -5,6 +5,7 @@ import java.util.List;
 
 import it.polito.tdp.seriea.model.Match;
 import it.polito.tdp.seriea.model.MatchIdMap;
+import it.polito.tdp.seriea.model.Result;
 import it.polito.tdp.seriea.model.Season;
 import it.polito.tdp.seriea.model.SeasonIdMap;
 import it.polito.tdp.seriea.model.Team;
@@ -30,6 +31,14 @@ public class TestSerieADAO {
 		
 		List<Match> matches = dao.listMatches(matchIdMap, seasonIdMap, teamIdMap);
 		System.out.println(matches.size());
+		
+		System.out.println();
+		List<Team> teamsSeason = dao.listTeams(teamIdMap, 2007);
+		System.out.println(teamsSeason.size());
+		
+		System.out.println();
+		List<Result> result = dao.risultati(matchIdMap, teamIdMap, 2007);
+		System.out.println(result.size());
 
 
 	}

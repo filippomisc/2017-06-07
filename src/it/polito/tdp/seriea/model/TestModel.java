@@ -6,6 +6,9 @@ public class TestModel {
 		// TODO Auto-generated method stub
 
 		Model model = new Model();
+		
+		model.createGraph(2007);
+		System.out.println(model.generaClassifica().toString());
 	}
 
 }

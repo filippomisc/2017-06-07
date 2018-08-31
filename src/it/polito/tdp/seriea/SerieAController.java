@@ -35,6 +35,18 @@ public class SerieAController {
 
     @FXML
     void handleCarica(ActionEvent event) {
+    	Season stagione = this.boxSeason.getValue();
+    	
+    	if(stagione==null) {
+    		txtResult.setText("ERRORE: seleziona una stagione\n");
+    		return ;
+    	}
+    	
+    	int idAnno = stagione.getSeason();
+    	
+    	m.createGraph(idAnno);
+		this.txtResult.setText(m.generaClassifica().toString());
+    	
 
     }
 
@@ -52,7 +64,7 @@ public class SerieAController {
 
 	public void setModel(Model model) {
 		this.m = model;
-		this.boxSeason.setItems(arg0);
+		this.boxSeason.getItems().addAll(m.getSeasons());
 	}
     
     
